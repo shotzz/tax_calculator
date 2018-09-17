@@ -1,0 +1,320 @@
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-regular-webfont.woff') format('woff2');
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background: #192038 url(../images/bg-image@3x.png) no-repeat center center fixed;
+    font-family: 'Montserrat',-apple-system,BlinkMacSystemFont,"Segoe UI",Ubuntu,Helvetica,Arial,sans-serif;
+    line-height: normal;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+button {
+    background: #5269ff;
+    background: -moz-linear-gradient(left, #5269ff 0%, #8899ff 100%);
+    background: -webkit-linear-gradient(left, #5269ff 0%,#8899ff 100%);
+    background: linear-gradient(to right, #5269ff 0%,#8899ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5269ff', endColorstr='#8899ff',GradientType=1 );
+
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    outline: none;
+    padding: 12px 20px;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.topNav {
+    background: #192038;
+    height: 54px;
+    padding: 15px 30px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.logo img {
+    margin-right: 16px;
+    vertical-align: middle;
+}
+
+.logo span {
+    vertical-align: middle;
+}
+
+.rightMenu {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    vertical-align: middle;
+}
+
+.rightMenu img {
+    margin-left: 23px;
+    vertical-align: middle;
+}
+
+#subnav {
+    overflow: hidden;
+    padding: 20px 0 30px;
+    text-align: right;
+}
+
+#subnav .dropdown {
+    background: #192038;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+    float: left;
+    height: 40px;
+    padding: 9px 40px 9px 16px;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#subnav .dropdown:before {
+     content: "";
+     border: solid #697178;
+     border-width: 0 2px 2px 0;
+     display: inline-block;
+     padding: 2px;
+     transform: rotate(45deg);
+     position: absolute;
+     right: 15px;
+     top: 16px;
+}
+
+#subnav .dropdown span {
+    vertical-align: middle;
+}
+
+#subnav button,
+#subnav img {
+    margin-left: 24px;
+    vertical-align: middle;
+}
+
+#empty {
+    margin-top: 90px;
+    text-align: center;
+}
+
+.results {
+    height: 100%;
+    overflow: auto;
+    padding: 0 30px 30px;
+}
+
+.results #empty h1 {
+    color: #ffffff;
+    font-size: 29px;
+    font-weight: normal;
+}
+
+.empCard {
+    background: url("../images/emp.png") no-repeat 0 0;
+    background-size: cover;
+    border-radius: 4px;
+    box-shadow: 1px 0 13px 0 rgba(0, 0, 0, 0.59);
+    display: inline-block;
+    height: 250px;
+    margin: 0 60px 60px 0;
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+}
+
+.empCard:hover {
+    cursor: pointer;
+}
+
+.empCard .details {
+    background: #192038;
+    border-radius: 0 0 4px 4px;
+    bottom: 0;
+    color: #ffffff;
+    position: absolute;
+    width: 100%;
+}
+
+.empCard:hover .details {
+    background: #fa629c; /* Old browsers */
+    background: -moz-linear-gradient(left, #fa629c 0%, #fc855f 100%);
+    background: -webkit-linear-gradient(left, #fa629c 0%,#fc855f 100%);
+    background: linear-gradient(to right, #fa629c 0%,#fc855f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa629c', endColorstr='#fc855f',GradientType=1 );
+}
+
+.empCard .details .empDetails {
+    padding: 8px 12px;
+    position: relative;
+}
+
+.empCard .details .edit {
+    background: url("../images/edit.svg") no-repeat 0 0;
+    display: none;
+    height: 16px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 16px;
+}
+
+.empCard:hover .details .edit {
+    background: url("../images/edit.svg") no-repeat 0 0;
+    display: block;
+}
+
+.empCard .details .taxDetails {
+    background: rgba(255, 206, 204, 0.24);
+    max-height: 0;
+    font-size: 0;
+    padding: 0px;
+    text-align: center;
+    transition: max-height 0.2s ease;
+}
+
+.empCard:hover .details .taxDetails {
+    font-size: 12px;
+    max-height: 200px;
+}
+
+.taxpayable,
+.taxincome {
+    display: inline-block;
+    padding: 8px;
+    position: relative;
+    text-align: center;
+    width: 50%;
+}
+
+.taxincome {
+    border-right: 1px solid rgba(255, 255, 255, 0.28)
+}
+
+.taxpayable div:last-child,
+.taxincome div:last-child {
+    font-size: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+.addEmployee {
+    background: #13192b;
+    bottom: 0;
+    box-shadow: 1px 0 13px 0 rgba(0, 0, 0, 0.59);
+    overflow: auto;
+    padding: 30px;
+    position: absolute;
+    right: -1000px;
+    transition: right 0.5s ease-out;
+    top: 52px;
+    width: 348px;
+}
+
+.addEmployee.show {
+    right: 0;
+}
+
+.addEmployee .close {
+    background: url("../images/close.svg") no-repeat 0 0;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+}
+
+.addEmployee button {
+    font-size: 14px;
+    padding: 20px;
+    width: 100%;
+}
+
+.field {
+    padding: 6px 0 20px;
+}
+
+.field label {
+    color: #575c72;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.field input {
+    background: #222842;
+    border: 1px solid #222842;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    padding: 17px 20px 14px;
+    outline: none;
+    width: 100%;
+}
+
+.field input:focus {
+    border: 1px solid #7082ff;
+}
+
+.field.error input {
+    border: 1px solid #ff0000;
+    margin-bottom: 5px;
+}
+
+.errorspan {
+    display: none;
+}
+
+.field.error .errorspan {
+    color: #ff0000;
+    display: block;
+    font-size: 10px;
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Employee Roster</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="topNav">
+        <div class="logo">
+            <img src="assets/images/menu.svg" height="13" width="15" />
+            <span>HR CLOUD</span>
+        </div>
+        <div class="rightMenu">
+            <img src="assets/images/userpic.jpg" height="26" width="26" />
+            <img src="assets/images/notification.svg" height="21" width="17" />
+            <img src="assets/images/message.svg" height="13" width="20" />
+        </div>
+    </div>
+    <div class="results">
+        <div id="empty">
+            <h1>No Employees added yet</h1>
+            <button onclick="showTray()">Add Employee</button>
+        </div>
+        <div id="subnav">
+            <div class="dropdown">
+                <span>All items</span>
+            </div>
+            <img src="assets/images/search.svg" width="20" height="20" />
+            <button onclick="showTray()">Add employee</button>
+        </div>
+        <div id="employees"></div>
+    </div>
+    <div id="addEmployee" class="addEmployee">
+        <a href="javascript:void(0)" onclick="hideTray()" class="close"></a>
+        <div class="field">
+            <label>Full Name</label>
+            <input type="text" id="fullName" name="fullName" required />
+            <span class="errorspan"></span>
+        </div>
+        <div class="field">
+            <label>Email Id</label>
+            <input type="email" id="email" name="email" required />
+            <span class="errorspan"></span>
+        </div>
+        <div class="field">
+            <label>Gross Salary</label>
+            <input type="number" onkeyup="computeTax()" id="salary" name="salary" />
+            <span class="errorspan"></span>
+        </div>
+        <div class="field">
+            <label>Investment</label>
+            <input type="number" onkeyup="computeTax()" id="investment" name="investment" />
+            <span class="errorspan"></span>
+        </div>
+        <div class="field">
+            <label>Taxable Income</label>
+            <input type="number" id="taxIncome" name="taxIncome" disabled />
+        </div>
+        <div class="field">
+            <label>Tax Payable</label>
+            <input type="number" id="taxPayable" name="taxPayable" disabled />
+        </div>
+        <div class="field">
+            <button onclick="createEmployeee()">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/js/employeee.js"></script>
+
+</body>
+</html>
