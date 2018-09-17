@@ -132,8 +132,8 @@ function addEmployeee(emp) {
     taxincome.appendChild(incomeText);
     role.innerHTML = "Team Lead";
     empDetails.appendChild(empName);
-    empDetails.appendChild(role);
     empDetails.appendChild(editIcon);
+    empDetails.appendChild(role);
     taxDetails.appendChild(taxincome);
     taxDetails.appendChild(taxpayable);
     details.appendChild(empDetails);
